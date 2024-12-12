@@ -1,0 +1,402 @@
+* {
+    box-sizing: border-box;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Space Grotesk", sans-serif;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    background: rgba(24 0 66 / 52.3%);
+    box-shadow: 0 4px 30px rgba(0 0 0 / 10%);
+    backdrop-filter: blur(11.1px);
+    width: 70%;
+    height: 5vh;
+    display: flex;
+    font-size: 2vh;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+header nav {
+    display: flex;
+    flex-flow: row;
+}
+
+header nav h2 {
+    display: flex;
+    justify-content: first baseline;
+    align-items: first baseline;
+}
+
+header nav ul {
+    display: flex;
+    flex-flow: row;
+    
+
+}
+
+header nav ul li a {
+    text-decoration: none;
+    padding: 0 1.5vw;
+    
+}
+
+header nav ul li a:hover {
+    color: rgba(176 103 239 / 100%);
+    font-weight: 900;
+}
+
+body {
+    background-image: url("https://img.freepik.com/free-vector/colorful-dark-wavy-background_23-2148400088.jpg?t=st=1732909321~exp=1732912921~hmac=907b18c402a729c8e7548e193f6d236c86bdb8fa362826e8237f818761650938&w=996");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+}
+
+main {
+    font-family: "Space Grotesk", sans-serif;
+    display: flex;
+    max-width: 70%;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    padding: 15vh 0;
+
+}
+
+main .container {
+    text-align: center;
+    margin: 0 0 5vh;
+
+    /* purple blur */
+    background: rgba(24 0 66 / 10%);
+    border-radius: 16px;
+    backdrop-filter: blur(11.1px);
+    box-shadow: 0 4px 20px rgba(0 0 0 / 60%);
+
+
+}
+
+main #timer-container {
+    width: 50vw;
+    height: 50vh;
+    padding: 5vh 0;
+
+
+}
+
+main .container .label {
+    display: inline-block;
+    padding: 0 3vw;
+    margin-top: 2vh;
+    font-weight: 700;
+    font-size: larger;
+
+}
+
+main .container .timer {
+    display: inline-block;
+    margin-top: 5vh;
+    padding: 0 3.9vw;
+    
+}
+
+main .container #work-timer, main .container #break-timer {
+    display: inline-flex
+}
+
+
+main .container .btn {
+    background-color: rgb(36 1 66 / 60%);
+    margin-top: 15vh;
+    padding: 2vh 4vw;
+    border-radius: 999px;
+    appearance: none;
+    border: none;
+
+}
+
+main .container .btn:hover {
+    background-color: rgba(176 103 239 / 30%);
+    padding: 2vh 4vw;
+    border: none;
+}
+
+main #task-container {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 50vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/* To Do and Notes */
+main #task-container #todo-container, main #task-container #notes-container {
+    width: 40vw;
+    min-height: 50vh;
+    padding: 5vh 0;
+    margin: 5vh 1vw;
+    max-height: fit-content;
+}
+
+main #task-container #todo-container .row {
+    min-width: 10vw;
+    max-width: 38vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(24 0 66 / 10%);
+    border-radius: 30px;
+    padding: 0.5vh 1vw;
+    margin: 4vh 1vw;
+    box-shadow: 0 4px 20px rgba(0 0 0 / 60%);
+
+}
+
+main #task-container #todo-container .row #input-todo, main #task-container #todo-container .row #button-add {
+    appearance: none;
+    border: none;
+    border-radius: 30px;
+}
+
+main #task-container #todo-container .row #input-todo {
+    width: 35vw;
+    padding: 1.5vh 10vw 1.5vh 1vw;
+    background: rgba(24 0 66 / 2%);
+}
+
+main #task-container #todo-container .row #button-add {
+    width: 4vw;
+    padding: 2vh;
+    margin: 0 0 0 0.5vw;
+    background-color: rgb(36 1 66 / 100%);
+}
+
+main #task-container #todo-container .row #button-add:hover {
+    background-color: rgba(176 103 239 / 30%);
+    padding: 2vh;
+    border-radius: 30px;
+
+}
+
+/* To Do List  */
+main #task-container #todo-container ul {
+    display: block;
+    text-align: left;
+    padding: 1vh 3vw;
+    margin: 0 3vw;
+    position: relative;
+    left: 3vw;
+}
+
+main #task-container #todo-container ul li {
+    padding: 2vh 0;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+
+
+}
+
+main #task-container #todo-container ul li::before {
+    content: '';
+    background-color: rgba(176 103 239 / 30%);
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    left: -3vw;
+}
+
+/* Checked To Do List  */
+main #task-container #todo-container ul li.checked {
+    color: rgba(176 103 239 / 30%);
+    text-decoration: line-through;
+    
+}
+
+main #task-container #todo-container ul li.checked::before {
+    /* background-color: rgba(176 103 239 / 0%); */
+    background-image: url("https://cdn.pixabay.com/photo/2017/01/13/01/22/ok-1976099_1280.png");
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    background-size: cover;
+}
+
+main #task-container #todo-container ul li span {
+    padding: 1vh 1vw;
+    position: absolute;
+    right: 1vw;
+    text-align: center;
+    justify-content: center;
+}
+
+main #task-container #todo-container ul li span:hover {
+    background-color: rgba(176 103 239 / 30%);
+    border-radius: 50%;
+
+
+}
+
+/* Notes  */
+
+main #task-container #notes-container {
+    box-shadow: 0 4px 20px rgba(255 240 240 /  50%);
+}
+
+main #task-container #notes-container .input-notes {
+    min-width: 10vw;
+    max-width: 38vw;
+    min-height: 30vh;
+    display: flex;
+    align-items: first baseline;
+    justify-content: first baseline;
+    background: rgba(24 0 66 / 10%);
+    border-radius: 30px;
+    padding: 0.5vh 1vw;
+    margin: 4vh 1vw;
+}
+
+
+/* aside  */
+main aside {
+    width: 30%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(176 103 239 / 60%);
+    box-shadow: 0 4px 20px rgba(255 240 240 / 50%);
+    display: flex;
+    align-items: first baseline;
+    flex-flow: column wrap;
+    justify-content: center;
+
+}
+
+main aside #music-image, main aside iframe {
+    margin: 2vh 2vw;
+    width: 90%;
+    border: 10px white;
+    box-shadow: 0 4px 20px rgba(0 0 0 / 80%);
+
+}
+
+/* Content  */
+
+main #content {
+    margin: 50vh 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+
+/* Footer  */
+footer {
+    display: flex;
+    align-items: center;
+    place-content: flex-end center;
+    padding: 1vh 0;
+    background: rgba(24 0 66 / 52.3%);
+    box-shadow: 0 4px 30px rgba(0 0 0 / 10%);
+    backdrop-filter: blur(11.1px);
+    width: 70%;
+}
+
+footer #social-media ul li {
+    display: inline-block;
+    padding: 0 0.5vw;
+}
+
+footer #social-media ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+footer #social-media ul li a .fab { 
+    display: inline-block;
+    padding: 0 0.5vw;
+
+}
+
+
+/* Responsive  */
+@media screen and (width <= 700px) {
+    header {
+        width: 100%;
+        display: flex;
+        flex-direction: row wrap;
+    }
+
+    main {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column wrap;
+        align-items: center;
+        justify-content: center;
+
+    }
+    
+    main #timer-container {
+        width: 80vw;
+    }
+    
+    main #task-container #todo-container, main #task-container #notes-container {
+        width: 80vw;
+    }
+    
+    main #task-container #todo-container .row {
+        max-width: 75vw;
+        margin: 5vh 0 0 2vw;
+    } 
+
+    main #task-container #todo-container .row #input-todo {
+        width: 55vw;
+    }
+
+    main #task-container #todo-container .row #button-add {
+        width: 20vw;
+    }
+
+
+    main #task-container #todo-container ul li {
+        margin: 0 0 0 5vw;
+    }
+
+    main #task-container #todo-container ul li::before {
+        margin: 0 0 0 -5vw;
+    }
+
+    main #task-container #notes-container .input-notes {
+        max-width: 80vw;
+        min-height: 30vh;
+        margin: 5vh 10vw;
+
+
+    }
+
+    main aside {
+        display: flex;
+        align-content: end;
+        position: static;
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+    }
+}

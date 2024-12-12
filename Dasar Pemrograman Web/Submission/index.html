@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Path -->
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <nav class="nav-lists">
+            <h3><a href="#">Pomodoro Timer</a></h3>
+            <ul>
+                <li><a href="#todo-container">To-do List</a></li>
+                <li><a href="#notes-container">Notes</a></li>
+                <li><a href="#social-media">Kontak Developer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container" id="timer-container">
+            <p id="work" class="label">Work</p><p id="cycles" class="label">Cycles</p><p id="break" class="label">Break</p>
+            
+            <br/>
+
+            <!-- Work Timer -->
+            <div class="timer" id="work-timer">
+                <p id="w-minutes">25</p><p id="semicolon">:</p><p id="w-seconds">00</p>
+            </div>
+
+            <!-- Cycle Counter  -->
+            <p id="counter" class="timer">0</p>
+
+
+            <!-- Break Timer -->
+            <div class="timer" id="break-timer">
+                <p id="b-minutes">5</p><p id="semicolon">:</p><p id="bbseconds">00</p>
+            </div>
+
+            <br/>
+
+            <!-- Timer Button  -->
+            <button class="btn" id="start">Start</button>
+            <button class="btn" id="pause">Pause</button>
+            <button class="btn" id="reset">Reset</button>
+        </div>
+
+        <!-- Todo and Notes -->
+        <div id="task-container">
+
+            <!-- Todo  -->
+            <div class="container" id="todo-container">
+                <p id="todo-label">To-do Lists</p>
+                <div class="row">
+                    <input type="text" id="input-todo" placeholder="Add a new task">
+                    <button id="button-add" onclick="AddTask()">Add</button>
+                </div>
+
+                <!-- List  -->
+                <ul id="list-container">
+                    <!-- <li class="checked">Task 1</li>
+                    <li>Task 23</li>
+                    <li>Task 4423</li> -->
+                    
+                </ul>
+        
+            </div>
+
+            <!-- Notes  -->
+            <div class="container" id="notes-container">
+                <p id="notes-label">Notes</p>
+                <p contenteditable="true" class="input-notes"></p>
+            </div>
+        </div>
+        <div id="content">
+            <article>
+                <p>
+                    Teknik belajar pomodoro dapat meningkatkan produktivitas. 
+                    Dengan teknik ini, kita tidak hanya diberikan waktu untuk belajar, namun juga diberikan waktu untuk beristirahat.
+                    Selain itu, teknik ini dapat membantu kita untuk tidak menunda-nunda suatu pekerjaan, karena dalam waktu 25 menit kita diharuskan untuk benar-benar fokus.
+                    Jadi, selamat fokus untuk 25 menit ke depan!
+                </p>
+            </article>
+        </div>
+            <!-- Music Aside -->
+        <aside>
+            <h3>Calming Music</h3>
+            <img src="https://i.pinimg.com/736x/57/49/98/574998559ace8ffb72a11ba61c215905.jpg" id="music-image" alt="music study illustration">
+            <iframe src="https://www.youtube.com/embed/jfKfPfyJRdk?si=qNUINa5rPi52VBfM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+        </aside>
+    </main>
+
+
+
+
+    <!-- Footer  -->
+    <footer>
+        <div id="social-media">
+            <ul>
+                <!-- <li><a href="#"><i class="fab fa-youtube"></i></a></li> -->
+                <li><a href="https://www.linkedin.com/in/shafida-afifah">Linkedin<i class="fab fa-linkedin-in"></i></a></li>
+                <!-- <li><a href="#"><i class="fab fa-twitter"></i></a></li> -->
+                <li><a href="https://www.instagram.com/shafidaaaa">Instagram<i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- JS Script -->
+    <script src="styles/main.js"></script>
+</body>
+</html>
