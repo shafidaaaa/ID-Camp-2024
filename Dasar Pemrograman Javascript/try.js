@@ -635,3 +635,4 @@ console.log(totalScore);
 
 
 
+console.log(5 == '5');
