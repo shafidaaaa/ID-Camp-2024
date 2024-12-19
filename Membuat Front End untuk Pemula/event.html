@@ -23,13 +23,18 @@
 </head>
 
 <body>
-    <div class="contents" align="center" hidden>
+    <!-- <div class="contents" align="center" hidden>
         <button id="incrementButton">Tekan Aku :)</button>
         <h3 id="caption">Kamu sudah menekan tombol di atas sebanyak <span id="count">0</span></h3>
         <button class="button" id="tombol">Tombol Custom Event</button>
+    </div> -->
+    <div class="buttons" align="center">
+        <h3 id="caption">Silakan tekan salah satu tombol di bawah...</h3>
+        <button class="button" id="tombol">Tombol Custom Event</button>
     </div>
-
     <script>
+
+        /*
         function increment() {
             document.getElementById('count').innerText++;
 
@@ -57,13 +62,18 @@
         document.getElementById('incrementButton').onclick = increment;
 
         document.body.onload = welcome; //memunculkan elemen hidden
+        */
 
+        // EVENT HANDLER
         const changeChaption = new Event('changeCaption');
 
         window.addEventListener('load', function() {
             const tombol = document.getElementById('tombol');
+
             tombol.addEventListener('changeCaption', customEventHandler);
-            tombol.addEventListener('click', function() {});
+            tombol.addEventListener('click', function() {
+                tombol.dispatchEvent(changeChaption);
+            });
         });
 
         function customEventHandler(ev) {
@@ -71,6 +81,8 @@
             const caption = document.getElementById('caption');
             caption.innerText = 'Anda telah membangkitkan custom event';
         }
+
+
 
 
     </script>
