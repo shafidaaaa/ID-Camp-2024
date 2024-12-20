@@ -4,7 +4,7 @@
 
     position: fixed;
     top: 50%;
-    left: 10%;
+    left: 50%;
 
     transform: translate(-50%, -50%);
 }
@@ -12,4 +12,8 @@
 .form-element {
     margin: 8px;
     text-align: left;
+}
+
+#notifikasiSisaKarakter {
+    visibility: hidden;
 }
