@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
     todos.push(todoObject);
 
     document.dispatchEvent(new Event(RENDER_EVENT));
+
+    document.dispatchEvent(new Event(RENDER_EVENT));
   }
 
   function makeTodo(todoObject) {
